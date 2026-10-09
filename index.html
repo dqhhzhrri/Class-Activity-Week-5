@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker Kuliah</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Task Tracker Kuliah</h1>
+            <p>Kelola tugas kuliahmu dengan mudah dan terstruktur.</p>
+        </header>
+
+        <!-- Form Tambah Tugas -->
+        <form id="task-form">
+            <div class="form-group">
+                <input type="text" id="task-title" placeholder="Judul tugas (min. 3 karakter)" autocomplete="off">
+            </div>
+            <div class="form-row">
+                <select id="task-course">
+                    <option value="Pemrograman Web">Pemrograman Web</option>
+                    <option value="Basis Data">Basis Data</option>
+                    <option value="Struktur Data & Algoritma">Struktur Data & Algoritma</option>
+                    <option value="Jaringan Komputer">Jaringan Komputer</option>
+                    <option value="Sistem Operasi">Sistem Operasi</option>
+                </select>
+                <input type="date" id="task-deadline">
+                <button type="submit">Tambah</button>
+            </div>
+            <p id="error-msg" class="error-text"></p>
+        </form>
+
+        <!-- Filter & Counter -->
+        <div class="controls">
+            <div class="filters">
+                <button class="filter-btn on" data-filter="semua">Semua</button>
+                <button class="filter-btn" data-filter="aktif">Aktif</button>
+                <button class="filter-btn" data-filter="selesai">Selesai</button>
+            </div>
+            <span id="task-counter">0 tugas aktif</span>
+        </div>
+
+        <!-- Daftar Tugas (Event Delegation di UL) -->
+        <ul id="task-list">
+            <!-- Item tugas akan dirender via JavaScript -->
+        </ul>
+    </div>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
